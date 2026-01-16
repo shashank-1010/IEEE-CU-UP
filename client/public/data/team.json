@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Adarsh Aggarwal",
+    "role": "Branch Counselor",
+    "bio": "Professor of Computer Science with 15+ years of experience in AI and Machine Learning.",
+    "category": "faculty",
+    "imageUrl": null,
+    "socialLinks": {
+      "linkedin": "#",
+      "email": "counselor@example.com"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Sarah Johnson",
+    "role": "Chairperson",
+    "bio": "Final year CSE student passionate about community building and technology.",
+    "category": "core",
+    "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1000",
+    "socialLinks": {
+      "linkedin": "#",
+      "twitter": "#"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "role": "Vice Chairperson",
+    "bio": "Tech enthusiast and robotics hobbyist.",
+    "category": "core",
+    "imageUrl": null,
+    "socialLinks": {
+      "linkedin": "#",
+      "email": "vicechair@example.com"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "role": "General Secretary",
+    "bio": "Organized and detail-oriented, ensuring smooth operations.",
+    "category": "core",
+    "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=1000",
+    "socialLinks": {
+      "linkedin": "#"
+    }
+  }
+]
