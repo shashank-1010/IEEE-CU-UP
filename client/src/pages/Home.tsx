@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Globe, BookOpen, Award, Users, Calendar, Cpu, Trophy } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
+import React from "react";
 
 // Counter component with smooth animation
 interface CounterProps {
@@ -152,12 +153,6 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
       className="sticky z-0 overflow-hidden rounded-3xl border-2 border-primary/20"
     >
       {/* REMOVED: Blue overlay div */}
-      {/* <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/50"
-        style={{
-          opacity,
-        }}
-      /> */}
     </motion.div>
   );
 };
@@ -233,6 +228,38 @@ const ParallaxSectionContent = () => (
   </div>
 );
 
+// Circle Text Component - Only shows on desktop
+const DrawCircleText = () => {
+  return (
+    <div className="relative hidden lg:block">
+      <h1 className="max-w-2xl text-center text-4xl md:text-4xl leading-snug font-bold"><br></br>
+        Advancing{" "}
+        <span className="relative">
+          Technology
+          <svg
+            viewBox="0 0 286 73"
+            fill="none"
+            className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1 w-[120%] h-auto"
+          >
+            <motion.path
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              transition={{
+                duration: 1.25,
+                ease: "easeInOut",
+              }}
+              d="M142.293 1C106.854 16.8908 6.08202 7.17705 1.23654 43.3756C-2.10604 68.3466 29.5633 73.2652 122.688 71.7518C215.814 70.2384 316.298 70.689 275.761 38.0785C230.14 1.37835 97.0503 24.4575 52.9384 1"
+              stroke="#00629B"
+              strokeWidth="3"
+            />
+          </svg>
+        </span>{" "}<br></br>
+        for Humanity
+      </h1>
+    </div>
+  );
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -242,35 +269,48 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative bg-slate-50 py-24 lg:py-32 overflow-hidden border-b border-slate-200">
           <div className="container-custom relative z-10">
-            <div className="max-w-3xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+              <div className="max-w-3xl">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-6 border border-primary/20">
+                    Where Students Build the Future with AI
+                  </span>
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-heading">
+                    <span className="text-[#00629B]">IEEE</span> Student Branch <br />
+                    <span className="text-red-500">Chandigarh </span>
+                    <span className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-heading">University</span>
+                  </h1>
+                  <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+                    Connect with the world's largest technical professional organization. 
+                    Innovate, collaborate, and shape the future of technology with us.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/join">
+                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 h-12 text-base shadow-md rounded-full">
+                        Join Our Community
+                      </Button>
+                    </Link>
+                    <Link href="/events">
+                      <Button variant="outline" size="lg" className="px-8 h-12 text-base border-primary/20 hover:bg-slate-100 text-primary rounded-full">
+                        View Events
+                      </Button>
+                    </Link>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Circle Text on Right Side - Only shows on desktop */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="hidden lg:block lg:mt-16"
               >
-                <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-6 border border-primary/20">
-                  Advancing Technology for Humanity
-                </span>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 font-heading">
-                  IEEE Student Branch <br />
-                  <span className="text-primary">Chandigarh University</span>
-                </h1>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-                  Connect with the world's largest technical professional organization. 
-                  Innovate, collaborate, and shape the future of technology with us.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/join">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 h-12 text-base shadow-md rounded-full">
-                      Join Our Community
-                    </Button>
-                  </Link>
-                  <Link href="/events">
-                    <Button variant="outline" size="lg" className="px-8 h-12 text-base border-primary/20 hover:bg-slate-100 text-primary rounded-full">
-                      View Events
-                    </Button>
-                  </Link>
-                </div>
+                <DrawCircleText />
               </motion.div>
             </div>
           </div>
@@ -279,70 +319,70 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
         </section>
 
-{/* Parallax Features Section - Clean text overlay without background */}
-<div className="bg-white">
-  <TextParallaxContent
-    imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    subheading="Innovate"
-    heading="Cutting Edge Technology"
-    icon={Cpu}
-  >
-    <ParallaxSectionContent />
-  </TextParallaxContent>
-  
-  <TextParallaxContent
-    imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    subheading="Collaborate"
-    heading="Global Community"
-    icon={Users}
-  >
-    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
-      <div className="col-span-1 md:col-span-8">
-        <p className="mb-4 sm:mb-5 md:mb-6 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Join a network of over 400,000 students worldwide. Collaborate with peers, 
-          learn from industry experts, and participate in global competitions and 
-          conferences that push the boundaries of technology.
-        </p>
-        <p className="mb-6 sm:mb-7 md:mb-8 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Our chapter facilitates connections that last a lifetime, providing mentorship 
-          opportunities and career guidance from experienced professionals.
-        </p>
-      </div>
-      <h2 className="col-span-1 text-2xl sm:text-2xl md:text-3xl font-bold md:col-span-4 text-primary font-heading tracking-tight">
-        Worldwide Network
-      </h2>
-    </div>
-  </TextParallaxContent>
-  
-  <TextParallaxContent
-    imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    subheading="Excel"
-    heading="Achieve Excellence"
-    icon={Trophy}
-  >
-    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
-      <h2 className="col-span-1 text-2xl sm:text-2xl md:text-3xl font-bold md:col-span-4 text-primary font-heading tracking-tight">
-        Award Winning
-      </h2>
-      <div className="col-span-1 md:col-span-8">
-        <p className="mb-4 sm:mb-5 md:mb-6 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Our members consistently excel in national and international competitions, 
-          research publications, and technical innovations. We celebrate achievements 
-          and foster an environment of continuous learning and growth.
-        </p>
-        <p className="mb-6 sm:mb-7 md:mb-8 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-          With access to IEEE's vast resources, publications, and learning platforms, 
-          our students are equipped to become leaders in their respective fields.
-        </p>
-        <Link href="/achievements">
-          <Button className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 sm:px-7 md:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg transition-colors w-full md:w-fit">
-            View Achievements <FiArrowUpRight className="ml-2 inline" />
-          </Button>
-        </Link>
-      </div>
-    </div>
-  </TextParallaxContent>
-</div>
+        {/* Parallax Features Section */}
+        <div className="bg-white">
+          <TextParallaxContent
+            imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            subheading="Innovate"
+            heading="Cutting Edge Technology"
+            icon={Cpu}
+          >
+            <ParallaxSectionContent />
+          </TextParallaxContent>
+          
+          <TextParallaxContent
+            imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            subheading="Collaborate"
+            heading="Global Community"
+            icon={Users}
+          >
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
+              <div className="col-span-1 md:col-span-8">
+                <p className="mb-4 sm:mb-5 md:mb-6 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  Join a network of over 400,000 students worldwide. Collaborate with peers, 
+                  learn from industry experts, and participate in global competitions and 
+                  conferences that push the boundaries of technology.
+                </p>
+                <p className="mb-6 sm:mb-7 md:mb-8 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  Our chapter facilitates connections that last a lifetime, providing mentorship 
+                  opportunities and career guidance from experienced professionals.
+                </p>
+              </div>
+              <h2 className="col-span-1 text-2xl sm:text-2xl md:text-3xl font-bold md:col-span-4 text-primary font-heading tracking-tight">
+                Worldwide Network
+              </h2>
+            </div>
+          </TextParallaxContent>
+          
+          <TextParallaxContent
+            imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            subheading="Excel"
+            heading="Achieve Excellence"
+            icon={Trophy}
+          >
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
+              <h2 className="col-span-1 text-2xl sm:text-2xl md:text-3xl font-bold md:col-span-4 text-primary font-heading tracking-tight">
+                Award Winning
+              </h2>
+              <div className="col-span-1 md:col-span-8">
+                <p className="mb-4 sm:mb-5 md:mb-6 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  Our members consistently excel in national and international competitions, 
+                  research publications, and technical innovations. We celebrate achievements 
+                  and foster an environment of continuous learning and growth.
+                </p>
+                <p className="mb-6 sm:mb-7 md:mb-8 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  With access to IEEE's vast resources, publications, and learning platforms, 
+                  our students are equipped to become leaders in their respective fields.
+                </p>
+                <Link href="/achievements">
+                  <Button className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 sm:px-7 md:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg transition-colors w-full md:w-fit">
+                    View Achievements <FiArrowUpRight className="ml-2 inline" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </TextParallaxContent>
+        </div>
 
         {/* Mission Section */}
         <section className="py-20 bg-slate-50">
