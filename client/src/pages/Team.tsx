@@ -34,11 +34,6 @@ export default function Team() {
       imageUrl: "/images/team/counselor.jpg",
       category: "faculty",
       bio: "Professor with 15+ years experience in AI and Machine Learning",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/rajeshkumar",
-        twitter: "https://twitter.com/rajeshkumar",
-        email: "rkumar@ieee-cu.edu"
-      }
     },
     {
       id: 2,
@@ -49,10 +44,6 @@ export default function Team() {
       imageUrl: "/images/team/advisor1.jpg",
       category: "faculty",
       bio: "Expert in VLSI Design and Embedded Systems",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/priyasharma",
-        email: "priya.sharma@ieee-cu.edu"
-      }
     },
     
     // Core Committee
@@ -65,11 +56,6 @@ export default function Team() {
       imageUrl: "/images/team/chairperson.jpg",
       category: "core",
       bio: "Leading IEEE CU towards technological excellence",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/aaravsharma",
-        twitter: "https://twitter.com/aaravsharma",
-        email: "aarav.sharma@ieee-cu.edu"
-      }
     },
     {
       id: 5,
@@ -79,11 +65,7 @@ export default function Team() {
       email: "25LBCS1294@culkomail.in",
       imageUrl: "/images/team/vice-chair.jpg",
       category: "core",
-      bio: "Passionate about women in tech and innovation",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/priyapatel",
-        email: "priya.patel@ieee-cu.edu"
-      }
+      bio: "Driven by innovation and student-led initiatives",
     },
     {
       id: 6,
@@ -93,11 +75,7 @@ export default function Team() {
       email: "25LBCS1012@culkomail.in",
       imageUrl: "/images/team/secretary.jpg",
       category: "core",
-      bio: "Expert in team coordination and event management",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/rohanverma",
-        email: "rohan.verma@ieee-cu.edu"
-      }
+      bio: "Team coordination and event management",
     },
     {
       id: 7,
@@ -105,13 +83,9 @@ export default function Team() {
       role: "Treasurer",
       department: "M.tech Cse AI/ML",
       email: "25LMCS1005@culkomai.in",
-      imageUrl: "/images/team/treasurer.jpg",
+      imageUrl: "/images/team/treasurer.png",
       category: "core",
-      bio: "Financial management and budgeting expert",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/snehasingh",
-        email: "sneha.singh@ieee-cu.edu"
-      }
+      bio: "Financial management and budgeting",
     },
     
     // Technical Team
@@ -123,11 +97,7 @@ export default function Team() {
       email: "25LMCS1001@culkomail.in",
       imageUrl: "/images/team/tech-lead.jpg",
       category: "tech",
-      bio: "Full Stack Developer & AI Enthusiast",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/arjunmehta",
-        email: "arjun.mehta@ieee-cu.edu"
-      }
+      bio: "AI Enthusiast",
     },
     {
       id: 13,
@@ -135,12 +105,9 @@ export default function Team() {
       role: "Technical Member",
       department: "Bca(Hons.)",
       email: "25LBBC1048@culkomail.in",
-      imageUrl: "/images/team/tech1.jpg",
+      imageUrl: "/images/team/tech1.jpeg",
       category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/rajeshwariiyer",
-        email: "rajeshwari.iyer@ieee-cu.edu"
-      }
+      bio: "Mern Stack & App Developer",
     },
     {
       id: 14,
@@ -150,10 +117,7 @@ export default function Team() {
       email: "25LBIT1024@culkomail.in",
       imageUrl: "/images/team/tech2.jpg",
       category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/siddharthrao",
-        email: "siddharth.rao@ieee-cu.edu"
-      }
+      bio: "Technical Support Member",
     },
     {
       id: 15,
@@ -163,11 +127,7 @@ export default function Team() {
       email: "25LBIT1022@culkomail.in",
       imageUrl: "/images/team/tech3.jpg",
       category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/mehakbhatia",
-        email: "mehak.bhatia@ieee-cu.edu"
-      },
-      
+      bio: "Python Enthusiast",   
     },
     {
       id: 16,
@@ -175,13 +135,9 @@ export default function Team() {
       role: "Technical Member",
       department: "Btech Cse",
       email: "25LBCS1261@culkomail.in",
-      imageUrl: "/images/team/tech3.jpg",
+      imageUrl: "/images/team/tech4.jpg",
       category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/mehakbhatia",
-        email: "mehak.bhatia@ieee-cu.edu"
-      },
-      
+      bio: "Technical Helper",
     },
     
     // Media Team
@@ -191,99 +147,61 @@ export default function Team() {
       role: "Social Media Manager",
       department: "Mass Communication",
       email: "25LBCS1305@culkomail.in",
-      imageUrl: "/images/team/social-media.jpg",
+      imageUrl: "/images/team/media1.jpg",
       category: "media",
       bio: "Digital marketing and social media strategist",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/ishaarora",
-        email: "isha.arora@ieee-cu.edu"
-      }
     },
     {
       id: 17,
-      name: "Kabir Choudhary",
+      name: "Vinayak",
       role: "Content Writer",
       department: "Journalism & Mass Comm",
       email: "kabir.choudhary@ieee-cu.edu",
-      imageUrl: "/images/team/content-writer.jpg",
+      imageUrl: "/images/team/media2.jpg",
       category: "media",
       bio: "Technical writing and content creation",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/kabirchoudhary",
-        email: "kabir.choudhary@ieee-cu.edu"
-      }
     },
     {
       id: 18,
-      name: "Neha Sharma",
+      name: "Naitik Srivastava",
       role: "Photographer",
-      department: "Design & Fine Arts",
+      department: "BTech CSE Core",
       email: "neha.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/photographer.jpg",
+      imageUrl: "/images/team/media3.jpg",
       category: "media",
       bio: "Event photography and visual storytelling",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/nehasharma",
-        email: "neha.sharma@ieee-cu.edu"
-      }
-    },
-    
-    // Events Team
-    {
-      id: 19,
-      name: "Naina Kapoor",
-      role: "Event Coordinator",
-      department: "Civil Engineering",
-      email: "naina.kapoor@ieee-cu.edu",
-      imageUrl: "/images/team/event1.jpg",
-      category: "events",
-      bio: "Expert in organizing large-scale technical events",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/nainakapoor",
-        email: "naina.kapoor@ieee-cu.edu"
-      }
-    },
-    {
-      id: 20,
-      name: "Aditya Rao",
-      role: "Logistics Head",
-      department: "Electrical Engineering",
-      email: "aditya.rao@ieee-cu.edu",
-      imageUrl: "/images/team/event2.jpg",
-      category: "events",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/adityarao",
-        email: "aditya.rao@ieee-cu.edu"
-      }
     },
     
     // Anchoring Team
     {
       id: 21,
-      name: "Dhruv Saxena",
+      name: "Kanika Singh",
       role: "Lead Anchor",
       department: "English Literature",
       email: "dhruv.saxena@ieee-cu.edu",
-      imageUrl: "/images/team/anchor1.jpg",
+      imageUrl: "/images/team/achor1.jpg",
       category: "anchor",
-      bio: "Experienced MC and public speaker",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/dhruvsaxena",
-        email: "dhruv.saxena@ieee-cu.edu"
-      }
+      bio: "public speaker",
+    },
+    {
+      id: 21,
+      name: "Aadya Gupta",
+      role: "Lead Anchor",
+      department: "English Literature",
+      email: "dhruv.saxena@ieee-cu.edu",
+      imageUrl: "/images/team/achor2.jpg",
+      category: "anchor",
+      bio: "Event Anchor",
     },
     {
       id: 22,
-      name: "Akshara Bajpai",
+      name: "Ridham",
       role: "Lead Anchor",
-      department: "Information Technology",
-      email: "25LBIT1024@culkomail.in",
-      imageUrl: "/images/team/tech2.jpg",
+      department: "English Literature",
+      email: "dhruv.saxena@ieee-cu.edu",
+      imageUrl: "/images/team/achor3.jpg",
       category: "anchor",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/siddharthrao",
-        email: "siddharth.rao@ieee-cu.edu"
-      }
+      bio: "Stage Host",
     },
   ];
 
