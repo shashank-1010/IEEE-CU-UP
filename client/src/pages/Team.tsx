@@ -27,24 +27,43 @@ export default function Team() {
     // Faculty Advisors
     {
       id: 1,
-      name: "Dr. Rajesh Kumar",
-      role: "Branch Counselor",
-      department: "Computer Science & Engineering",
+      name: "Dr. Ajay Kumar Singh",
+      role: "HOD",
+      department: "School of Computer Science and Engineering",
       email: "rkumar@ieee-cu.edu",
-      imageUrl: "/images/team/counselor.jpg",
+      imageUrl: "/images/team/sir1.jpg",
       category: "faculty",
       bio: "Professor with 15+ years experience in AI and Machine Learning",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/rajeshkumar",
+        twitter: "https://twitter.com/rajeshkumar",
+        email: "rkumar@ieee-cu.edu"
+      }
     },
     {
       id: 2,
-      name: "Dr. Priya Sharma",
-      role: "Faculty Advisor",
-      department: "Electronics & Communication",
+      name: "Dr. Vikash Kumar Mishra",
+      role: "Branch Counsellor, IEEE Student Branch ",
+      department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/advisor1.jpg",
+      imageUrl: "/images/team/sir2.jpg",
+      category: "faculty",
+    },
+    {
+      id: 3,
+      name: "Dr. Amit Kumar Mishra",
+      role: "Faculty Advisor",
+      department: "School of Computer Science and Engineering",
+      email: "priya.sharma@ieee-cu.edu",
+      imageUrl: "/images/team/sir3.jpg",
       category: "faculty",
       bio: "Expert in VLSI Design and Embedded Systems",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/priyasharma",
+        email: "priya.sharma@ieee-cu.edu"
+      }
     },
+    
     
     // Core Committee
     {
@@ -53,13 +72,13 @@ export default function Team() {
       role: "Chairperson",
       department: "Department of computing",
       email: "25LMCS10042@culkomail.in",
-      imageUrl: "/images/team/chairperson.jpg",
+      imageUrl: "/images/team/chairperson.png",
       category: "core",
       bio: "Leading IEEE CU towards technological excellence",
     },
     {
       id: 5,
-      name: "Ayan Ahemad Khan",
+      name: "Ayan Ahmad Khan",
       role: "Vice Chairperson",
       department: "B.Tech Cse",
       email: "25LBCS1294@culkomail.in",
@@ -97,7 +116,11 @@ export default function Team() {
       email: "25LMCS1001@culkomail.in",
       imageUrl: "/images/team/tech-lead.jpg",
       category: "tech",
-      bio: "AI Enthusiast",
+      bio: "Full Stack Developer & AI Enthusiast",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/arjunmehta",
+        email: "arjun.mehta@ieee-cu.edu"
+      }
     },
     {
       id: 13,
@@ -107,7 +130,10 @@ export default function Team() {
       email: "25LBBC1048@culkomail.in",
       imageUrl: "/images/team/tech1.jpeg",
       category: "tech",
-      bio: "Mern Stack & App Developer",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/rajeshwariiyer",
+        email: "rajeshwari.iyer@ieee-cu.edu"
+      }
     },
     {
       id: 14,
@@ -117,7 +143,10 @@ export default function Team() {
       email: "25LBIT1024@culkomail.in",
       imageUrl: "/images/team/tech2.jpg",
       category: "tech",
-      bio: "Technical Support Member",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/siddharthrao",
+        email: "siddharth.rao@ieee-cu.edu"
+      }
     },
     {
       id: 15,
@@ -127,7 +156,11 @@ export default function Team() {
       email: "25LBIT1022@culkomail.in",
       imageUrl: "/images/team/tech3.jpg",
       category: "tech",
-      bio: "Python Enthusiast",   
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/mehakbhatia",
+        email: "mehak.bhatia@ieee-cu.edu"
+      },
+      
     },
     {
       id: 16,
@@ -137,19 +170,27 @@ export default function Team() {
       email: "25LBCS1261@culkomail.in",
       imageUrl: "/images/team/tech4.jpg",
       category: "tech",
-      bio: "Technical Helper",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/mehakbhatia",
+        email: "mehak.bhatia@ieee-cu.edu"
+      },
+      
     },
     
     // Media Team
     {
       id: 16,
-      name: "Mohd. Humza",
+      name: "Mohd Humza",
       role: "Social Media Manager",
       department: "Mass Communication",
       email: "25LBCS1305@culkomail.in",
       imageUrl: "/images/team/media1.jpg",
       category: "media",
       bio: "Digital marketing and social media strategist",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/ishaarora",
+        email: "isha.arora@ieee-cu.edu"
+      }
     },
     {
       id: 17,
@@ -160,6 +201,10 @@ export default function Team() {
       imageUrl: "/images/team/media2.jpg",
       category: "media",
       bio: "Technical writing and content creation",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/kabirchoudhary",
+        email: "kabir.choudhary@ieee-cu.edu"
+      }
     },
     {
       id: 18,
@@ -170,6 +215,39 @@ export default function Team() {
       imageUrl: "/images/team/media3.jpg",
       category: "media",
       bio: "Event photography and visual storytelling",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/nehasharma",
+        email: "neha.sharma@ieee-cu.edu"
+      }
+    },
+    
+    // Events Team
+    {
+      id: 19,
+      name: "Naina Kapoor",
+      role: "Event Coordinator",
+      department: "Civil Engineering",
+      email: "naina.kapoor@ieee-cu.edu",
+      imageUrl: "/images/team/event1.jpg",
+      category: "events",
+      bio: "Expert in organizing large-scale technical events",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/nainakapoor",
+        email: "naina.kapoor@ieee-cu.edu"
+      }
+    },
+    {
+      id: 20,
+      name: "Aditya Rao",
+      role: "Logistics Head",
+      department: "Electrical Engineering",
+      email: "aditya.rao@ieee-cu.edu",
+      imageUrl: "/images/team/event2.jpg",
+      category: "events",
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/adityarao",
+        email: "aditya.rao@ieee-cu.edu"
+      }
     },
     
     // Anchoring Team
