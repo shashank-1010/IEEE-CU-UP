@@ -33,12 +33,6 @@ export default function Team() {
       email: "rkumar@ieee-cu.edu",
       imageUrl: "/images/team/sir1.jpg",
       category: "faculty",
-      bio: "Professor with 15+ years experience in AI and Machine Learning",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/rajeshkumar",
-        twitter: "https://twitter.com/rajeshkumar",
-        email: "rkumar@ieee-cu.edu"
-      }
     },
     {
       id: 2,
@@ -57,11 +51,6 @@ export default function Team() {
       email: "priya.sharma@ieee-cu.edu",
       imageUrl: "/images/team/sir3.jpg",
       category: "faculty",
-      bio: "Expert in VLSI Design and Embedded Systems",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/priyasharma",
-        email: "priya.sharma@ieee-cu.edu"
-      }
     },
     
     
