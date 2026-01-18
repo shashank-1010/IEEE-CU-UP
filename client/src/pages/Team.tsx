@@ -105,11 +105,7 @@ export default function Team() {
       email: "25LMCS1001@culkomail.in",
       imageUrl: "/images/team/tech-lead.jpg",
       category: "tech",
-      bio: "Full Stack Developer & AI Enthusiast",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/arjunmehta",
-        email: "arjun.mehta@ieee-cu.edu"
-      }
+      bio: "Tech Lead managing technical direction and team coordination.",
     },
     {
       id: 13,
@@ -119,10 +115,7 @@ export default function Team() {
       email: "25LBBC1048@culkomail.in",
       imageUrl: "/images/team/tech1.jpeg",
       category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/rajeshwariiyer",
-        email: "rajeshwari.iyer@ieee-cu.edu"
-      }
+      bio: "Developer building and managing IEEE website and mobile app.",
     },
     {
       id: 14,
@@ -132,10 +125,7 @@ export default function Team() {
       email: "25LBIT1024@culkomail.in",
       imageUrl: "/images/team/tech2.jpg",
       category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/siddharthrao",
-        email: "siddharth.rao@ieee-cu.edu"
-      }
+      bio: "Technical support assisting in development and issue resolution.",
     },
     {
       id: 15,
@@ -145,11 +135,7 @@ export default function Team() {
       email: "25LBIT1022@culkomail.in",
       imageUrl: "/images/team/tech3.jpg",
       category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/mehakbhatia",
-        email: "mehak.bhatia@ieee-cu.edu"
-      },
-      
+      bio: "Technical executive supporting development, systems, and technical operations.",  
     },
     {
       id: 16,
@@ -158,12 +144,18 @@ export default function Team() {
       department: "Btech Cse",
       email: "25LBCS1261@culkomail.in",
       imageUrl: "/images/team/tech4.jpg",
-      category: "tech",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/mehakbhatia",
-        email: "mehak.bhatia@ieee-cu.edu"
-      },
-      
+      category: "tech", 
+      bio: "Technical team member contributing to development and system support.",   
+    },
+    {
+      id: 17,
+      name: "Tarun",
+      role: "Technical Member",
+      department: "Btech Cse",
+      email: "25LBCS1261@culkomail.in",
+      imageUrl: "/images/team/tech5.jpg",
+      category: "tech", 
+      bio: "Technical team member contributing to development and system support.",   
     },
     
     // Media Team
@@ -175,11 +167,6 @@ export default function Team() {
       email: "25LBCS1305@culkomail.in",
       imageUrl: "/images/team/media1.jpg",
       category: "media",
-      bio: "Digital marketing and social media strategist",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/ishaarora",
-        email: "isha.arora@ieee-cu.edu"
-      }
     },
     {
       id: 17,
@@ -189,11 +176,6 @@ export default function Team() {
       email: "kabir.choudhary@ieee-cu.edu",
       imageUrl: "/images/team/media2.jpg",
       category: "media",
-      bio: "Technical writing and content creation",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/kabirchoudhary",
-        email: "kabir.choudhary@ieee-cu.edu"
-      }
     },
     {
       id: 18,
@@ -203,11 +185,6 @@ export default function Team() {
       email: "neha.sharma@ieee-cu.edu",
       imageUrl: "/images/team/media3.jpg",
       category: "media",
-      bio: "Event photography and visual storytelling",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/nehasharma",
-        email: "neha.sharma@ieee-cu.edu"
-      }
     },
     
     // Events Team
@@ -219,11 +196,6 @@ export default function Team() {
       email: "naina.kapoor@ieee-cu.edu",
       imageUrl: "/images/team/event1.jpg",
       category: "events",
-      bio: "Expert in organizing large-scale technical events",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/nainakapoor",
-        email: "naina.kapoor@ieee-cu.edu"
-      }
     },
     {
       id: 20,
@@ -233,10 +205,6 @@ export default function Team() {
       email: "aditya.rao@ieee-cu.edu",
       imageUrl: "/images/team/event2.jpg",
       category: "events",
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/adityarao",
-        email: "aditya.rao@ieee-cu.edu"
-      }
     },
     
     // Anchoring Team
@@ -248,7 +216,6 @@ export default function Team() {
       email: "dhruv.saxena@ieee-cu.edu",
       imageUrl: "/images/team/achor1.jpg",
       category: "anchor",
-      bio: "public speaker",
     },
     {
       id: 21,
@@ -258,7 +225,6 @@ export default function Team() {
       email: "dhruv.saxena@ieee-cu.edu",
       imageUrl: "/images/team/achor2.jpg",
       category: "anchor",
-      bio: "Event Anchor",
     },
     {
       id: 22,
@@ -268,7 +234,6 @@ export default function Team() {
       email: "dhruv.saxena@ieee-cu.edu",
       imageUrl: "/images/team/achor3.jpg",
       category: "anchor",
-      bio: "Stage Host",
     },
   ];
 
