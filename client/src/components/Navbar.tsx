@@ -21,12 +21,12 @@ export function Navbar() {
       <div className="container-custom flex h-16 items-center justify-between">
 <Link href="/" className="flex items-center space-x-3">
   <img 
-    src="https://image2url.com/r2/default/images/1768496336459-7d6b7bab-46fb-43db-8749-42a2e321e880.jfif" 
+    src="https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/IEEE-CU-Logo-Official-imagetourl.cloud-1768544558737-myd2ju.jpg" 
     alt="IEEE Logo" 
     className="h-16 w-auto" 
   />
   <div className="text-2xl font-bold text-primary font-heading tracking-tight">
-    IEEE <span className="text-foreground font-normal text-lg">CU Student Branch</span>
+  <span className="text-foreground font-normal text-lg">Student Branch CU</span>
   </div>
 </Link>
 
