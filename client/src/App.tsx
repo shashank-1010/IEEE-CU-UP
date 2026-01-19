@@ -9,6 +9,7 @@ import About from "@/pages/About";
 import Events from "@/pages/Events";
 import Team from "@/pages/Team";
 import Contact from "@/pages/Contact";
+import Members from "@/pages/MemberCard";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/events" component={Events} />
+      <Route path="/members" component={Members} />
       <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />
       <Route path="/join" component={Contact} /> {/* Redirect join to contact for now */}
