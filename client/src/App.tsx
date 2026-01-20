@@ -10,6 +10,8 @@ import Events from "@/pages/Events";
 import Team from "@/pages/Team";
 import Contact from "@/pages/Contact";
 import Members from "@/pages/MemberCard";
+import Register from "@/pages/register";
+import Guidelines from "@/pages/guide";
 
 function Router() {
   return (
@@ -20,7 +22,8 @@ function Router() {
       <Route path="/members" component={Members} />
       <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />
-      <Route path="/join" component={Contact} /> {/* Redirect join to contact for now */}
+      <Route path="/guide" component={Guidelines} />
+      <Route path="/join" component={Register} /> {/* Redirect join to contact for now */}
       <Route component={NotFound} />
     </Switch>
   );
