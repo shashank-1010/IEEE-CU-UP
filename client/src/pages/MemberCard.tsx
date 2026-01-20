@@ -10,17 +10,18 @@ import { Link } from "wouter";
 // Dummy member data
 const dummyMembers = [
   { id: "101932497", name: "Kanika Singh", email: "25LBCS1377@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
-  { id: "100697627", name: "Ishan Yadav", email: "	25LBCS1278@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
+  { id: "100697627", name: "Ishan Yadav", email: "25LBCS1278@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
   { id: "101932040", name: "Naitik Srivastava", email: "25lbcs1011@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
   { id: "101933725", name: "Paras Tiwari", email: "25LBCS1079@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
   { id: "101931975", name: "Animesh Mishra", email: "25LBCS1039@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
   { id: "101932317", name: "Aaradhya Gupta", email: "25LBCS1099@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
   { id: "101944697", name: "Deepanjali Srivastava", email: "25LBCS1291@culkomail.in", campus: "Chandigarh University UP", state: "Uttar Pradesh", membershipType: "Student", membershipYear: 2025, department: "Btech-CSE Core", status: "Active" },
 ];
+
 // Campus options
-const campusOptions = ["Chandigarh University", "All Campuses"];
+const campusOptions = ["All Campuses", "Chandigarh University UP", "Chandigarh University Main"];
 const membershipOptions = ["All Types", "Student", "Professional", "Graduate"];
-const yearOptions = ["All Years", "2024", "2023", "2022", "2021", "2020"];
+const yearOptions = ["All Years", "2025", "2024", "2023", "2022", "2021", "2020"];
 
 export default function Members() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -72,25 +73,26 @@ export default function Members() {
           <div className="container-custom">
             <div className="max-w-6xl mx-auto">
               <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
-                {/* Search Bar */}
-                <div className="relative mb-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-sm text-gray-600">
-                      Showing <span className="font-bold text-[#00629B]">{filteredMembers.length}</span> members
-                    </div>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="gap-2 border-gray-300 hover:border-[#00629B] hover:text-[#00629B]"
-                      onClick={() => setShowFilters(!showFilters)}
-                    >
-                      <Filter className="h-4 w-4" />
-                      Filters
-                      <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
-                    </Button>
+                {/* Search Bar and Controls */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                  <div className="text-sm text-gray-600">
+                    Showing <span className="font-bold text-[#00629B]">{filteredMembers.length}</span> members
                   </div>
                   
-                  
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="gap-2 border-gray-300 hover:border-[#00629B] hover:text-[#00629B]"
+                    onClick={() => setShowFilters(!showFilters)}
+                  >
+                    <Filter className="h-4 w-4" />
+                    Filters
+                    <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+                  </Button>
+                </div>
+                
+                {/* Search Input */}
+                <div className="relative mb-6">
                   <Input              
                     type="text"
                     placeholder="Search by name, email, ID, or department..."
@@ -98,6 +100,9 @@ export default function Members() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
+                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    <User className="h-5 w-5" />
+                  </div>
                 </div>
 
                 {/* Filters Panel */}
@@ -180,7 +185,7 @@ export default function Members() {
           </div>
         </section>
 
-        {/* Members Grid */}
+        {/* Members Display Section - ONLY TABLE VIEW */}
         <section className="py-10">
           <div className="container-custom">
             <div className="max-w-6xl mx-auto">
@@ -193,106 +198,100 @@ export default function Members() {
                     </p>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredMembers.map((member, index) => (
-                      <motion.div
-                        key={member.id}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                      >
-                        <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-all duration-200 h-full hover:border-[#00629B]/30">
-                          {/* Member Header */}
-                          <div className="flex items-start justify-between mb-4">
-                            <div className="flex items-center gap-3">
-                              <div className="w-12 h-12 rounded-full bg-[#00629B]/10 flex items-center justify-center">
-                                <User className="h-6 w-6 text-[#00629B]" />
-                              </div>
-                              <div>
-                                <h3 className="font-bold text-gray-900">{member.name}</h3>
-                                <div className="flex items-center gap-2 mt-1">
-                                  <span className={`px-2 py-1 text-xs rounded-full ${
-                                    member.membershipType === "Student" 
-                                      ? "bg-[#00629B]/10 text-[#00629B]" 
-                                      : member.membershipType === "Professional"
-                                      ? "bg-purple-100 text-purple-700"
-                                      : "bg-green-100 text-green-700"
-                                  }`}>
-                                    {member.membershipType}
-                                  </span>
-                                  <span className="text-xs text-gray-500">• {member.status}</span>
+                  {/* Table View - Mobile and Desktop responsive */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="overflow-x-auto bg-white rounded-lg border border-gray-200 shadow-sm"
+                  >
+                    <table className="min-w-full divide-y divide-gray-200">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Member Info
+                          </th>
+                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                            Contact
+                          </th>
+                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Campus & Dept
+                          </th>
+                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">
+                            Membership
+                          </th>
+                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Actions
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        {filteredMembers.map((member, index) => (
+                          <motion.tr 
+                            key={member.id}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: index * 0.03 }}
+                            className="hover:bg-gray-50 transition-colors"
+                          >
+                            <td className="px-4 md:px-6 py-4 whitespace-nowrap">
+                              <div className="flex items-center">
+                                <div className="w-10 h-10 rounded-full bg-[#00629B]/10 flex items-center justify-center mr-3">
+                                  <User className="h-5 w-5 text-[#00629B]" />
+                                </div>
+                                <div>
+                                  <div className="text-sm font-medium text-gray-900">{member.name}</div>
+                                  <div className="text-sm text-gray-500 md:hidden">{member.email}</div>
+                                  <div className="text-xs text-gray-500 mt-1">{member.id}</div>
                                 </div>
                               </div>
-                            </div>
-                            <Hash className="h-5 w-5 text-gray-400" />
-                          </div>
-
-                          {/* Member Details */}
-                          <div className="space-y-3">
-                            <div className="flex items-center gap-2 text-gray-700">
-                              <Mail className="h-4 w-4 text-[#00629B] flex-shrink-0" />
-                              <a 
-                                href={`mailto:${member.email}`}
-                                className="text-sm hover:text-[#00629B] transition-colors truncate"
-                              >
-                                {member.email}
-                              </a>
-                            </div>
-                            
-                            <div className="flex items-center gap-2 text-gray-700">
-                              <Hash className="h-4 w-4 text-[#00629B] flex-shrink-0" />
-                              <span className="text-sm font-mono">{member.id}</span>
-                            </div>
-                            
-                            <div className="flex items-center gap-2 text-gray-700">
-                              <GraduationCap className="h-4 w-4 text-[#00629B] flex-shrink-0" />
-                              <span className="text-sm">{member.department}</span>
-                            </div>
-                            
-                            <div className="flex items-center gap-2 text-gray-700">
-                              <Building className="h-4 w-4 text-[#00629B] flex-shrink-0" />
-                              <span className="text-sm">{member.campus}</span>
-                            </div>
-                            
-                            <div className="flex items-center gap-2 text-gray-700">
-                              <MapPin className="h-4 w-4 text-[#00629B] flex-shrink-0" />
-                              <span className="text-sm">{member.state}</span>
-                            </div>
-                            
-                            <div className="flex items-center gap-2 text-gray-700">
-                              <Calendar className="h-4 w-4 text-[#00629B] flex-shrink-0" />
-                              <span className="text-sm">Member since {member.membershipYear}</span>
-                            </div>
-                          </div>
-
-                          {/* Actions */}
-                          <div className="mt-6 pt-6 border-t border-gray-100 flex gap-2">
-                            <Button 
-                              variant="outline" 
-                              size="sm" 
-                              className="flex-1 border-gray-300 hover:border-[#00629B] hover:text-[#00629B]"
-                              asChild
-                            >
-                              <a href={`mailto:${member.email}`}>
-                                <Mail className="h-4 w-4 mr-2" />
-                                Email
-                              </a>
-                            </Button>
-                            <Button 
-                              size="sm" 
-                              className="flex-1 bg-[#00629B] hover:bg-[#00629B]/90"
-                              asChild
-                            >
-                              <a href={`/profile/${member.id}`}>
-                                <ExternalLink className="h-4 w-4 mr-2" />
-                                Profile
-                              </a>
-                            </Button>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+                            </td>
+                            <td className="px-4 md:px-6 py-4 whitespace-nowrap hidden md:table-cell">
+                              <div className="text-sm text-gray-900">{member.email}</div>
+                              <div className="text-xs text-gray-500 mt-1">{member.id}</div>
+                            </td>
+                            <td className="px-4 md:px-6 py-4">
+                              <div className="text-sm text-gray-900">{member.campus}</div>
+                              <div className="text-sm text-gray-500">{member.department}</div>
+                            </td>
+                            <td className="px-4 md:px-6 py-4 whitespace-nowrap hidden sm:table-cell">
+                              <div className="flex flex-col gap-1">
+                                <span className={`px-2 py-1 text-xs rounded-full w-fit ${
+                                  member.membershipType === "Student" 
+                                    ? "bg-[#00629B]/10 text-[#00629B]" 
+                                    : "bg-purple-100 text-purple-700"
+                                }`}>
+                                  {member.membershipType}
+                                </span>
+                                <span className="text-xs text-gray-600">Since {member.membershipYear}</span>
+                                <span className="text-xs text-green-600 font-medium">{member.status}</span>
+                              </div>
+                            </td>
+                            <td className="px-4 md:px-6 py-4 whitespace-nowrap text-sm font-medium">
+                              <div className="flex flex-col sm:flex-row gap-2">
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  className="h-8 w-full sm:w-auto justify-center"
+                                  asChild
+                                >
+                                  <a href={`mailto:${member.email}`}>
+                                    <Mail className="h-3.5 w-3.5 mr-1" />
+                                    <span className="hidden sm:inline">Email</span>
+                                  </a>
+                                </Button>
+                                <Button 
+                                  size="sm"
+                                  className="h-8 w-full sm:w-auto justify-center bg-[#00629B] hover:bg-[#00629B]/90"
+                                  asChild
+                                >
+                                </Button>
+                              </div>
+                            </td>
+                          </motion.tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </motion.div>
                 </>
               ) : (
                 <div className="text-center py-16">
