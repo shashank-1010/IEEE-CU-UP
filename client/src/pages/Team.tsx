@@ -40,7 +40,7 @@ export default function Team() {
       role: "Branch Counsellor, IEEE Student Branch ",
       department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/sir2.png",
+      imageUrl: "/images/team/sir3.png",
       category: "faculty",
     },
     {
@@ -49,7 +49,7 @@ export default function Team() {
       role: "Faculty Advisor",
       department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/sir3.png",
+      imageUrl: "/images/team/sir2.png",
       category: "faculty",
     },
     
