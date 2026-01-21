@@ -31,7 +31,7 @@ export default function Team() {
       role: "HOD",
       department: "School of Computer Science and Engineering",
       email: "rkumar@ieee-cu.edu",
-      imageUrl: "/images/team/sir1.png",
+      imageUrl: "/images/team/sir1.jpeg",
       category: "faculty",
     },
     {
@@ -49,7 +49,7 @@ export default function Team() {
       role: "Faculty Advisor",
       department: "School of Computer Science and Engineering",
       email: "priya.sharma@ieee-cu.edu",
-      imageUrl: "/images/team/sir2.jpeg",
+      imageUrl: "/images/team/sir2.png",
       category: "faculty",
     },
     
