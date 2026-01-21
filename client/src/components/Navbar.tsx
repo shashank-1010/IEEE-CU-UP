@@ -11,6 +11,7 @@ const navItems = [
   { label: "Members", href: "/members" }, // Add this line
   { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 export function Navbar() {
