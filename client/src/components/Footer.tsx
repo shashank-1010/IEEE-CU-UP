@@ -32,7 +32,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:ieee@cumail.in" className="hover:text-primary">ieee@cumail.in</a>
+                <a href="mailto:ieee@cumail.in" className="hover:text-primary">ieeestudentbranch.cuup@culko.in</a>
               </li>
             </ul>
           </div>
