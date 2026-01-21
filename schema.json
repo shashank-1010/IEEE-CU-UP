@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "default: Image Gallery"
+        },
+        "subtitle": {
+          "type": "string",
+          "default": "Browse through our stunning collection"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "imageUrl": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "photographer": {
+                "type": "string"
+              },
+              "photographerUrl": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "autoPlay": {
+          "type": "boolean",
+          "default": false
+        },
+        "autoPlayInterval": {
+          "type": "number",
+          "default": 5000,
+          "minimum": 1000,
+          "maximum": 10000
+        },
+        "showThumbnails": {
+          "type": "boolean",
+          "default": true
+        },
+        "thumbnailPosition": {
+          "type": "string",
+          "enum": ["bottom", "right"],
+          "default": "bottom"
+        },
+        "transitionDuration": {
+          "type": "number",
+          "default": 500,
+          "minimum": 200,
+          "maximum": 1000
+        },
+        "enableKeyboardNav": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "styleOverrides": {
+      "type": "object"
+    }
+  }
+}
