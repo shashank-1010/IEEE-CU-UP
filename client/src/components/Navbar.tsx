@@ -38,9 +38,6 @@ return (
             alt="IEEE Logo" 
             className="h-16 w-auto" 
           />
-          <div className="text-2xl font-bold text-primary font-heading tracking-tight">
-            <span className="text-foreground font-normal text-lg">Student Branch CU</span>
-          </div>
         </div>
       </Link>
 
