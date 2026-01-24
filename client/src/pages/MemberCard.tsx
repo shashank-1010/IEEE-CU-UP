@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, MapPin, User, GraduationCap, Filter, ChevronDown, ExternalLink, Building, Calendar, Award, Hash } from "lucide-react";
+import { Mail, User, Filter, ChevronDown, Building, Calendar, Award, Hash } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -21,7 +21,7 @@ const dummyMembers = [
 // Campus options
 const campusOptions = ["All Campuses", "Chandigarh University UP", "Chandigarh University Main"];
 const membershipOptions = ["All Types", "Student", "Professional", "Graduate"];
-const yearOptions = ["All Years", "2025", "2024", "2023", "2022", "2021", "2020"];
+const yearOptions = ["All Years", "2025"];
 
 export default function Members() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -210,11 +210,14 @@ export default function Members() {
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Member Info
                           </th>
+                          <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            ID
+                          </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
                             Contact
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Campus & Dept
+                            School and Course
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">
                             Membership
@@ -241,13 +244,19 @@ export default function Members() {
                                 <div>
                                   <div className="text-sm font-medium text-gray-900">{member.name}</div>
                                   <div className="text-sm text-gray-500 md:hidden">{member.email}</div>
-                                  <div className="text-xs text-gray-500 mt-1">{member.id}</div>
                                 </div>
+                              </div>
+                            </td>
+                            <td className="px-4 md:px-6 py-4 whitespace-nowrap">
+                              <div className="flex items-center">
+                                <Hash className="h-3 w-3 text-gray-400 mr-2" />
+                                <span className="text-sm font-medium text-gray-900 font-mono bg-gray-50 px-2 py-1 rounded border border-gray-200">
+                                  {member.id}
+                                </span>
                               </div>
                             </td>
                             <td className="px-4 md:px-6 py-4 whitespace-nowrap hidden md:table-cell">
                               <div className="text-sm text-gray-900">{member.email}</div>
-                              <div className="text-xs text-gray-500 mt-1">{member.id}</div>
                             </td>
                             <td className="px-4 md:px-6 py-4">
                               <div className="text-sm text-gray-900">{member.campus}</div>
@@ -278,12 +287,6 @@ export default function Members() {
                                     <Mail className="h-3.5 w-3.5 mr-1" />
                                     <span className="hidden sm:inline">Email</span>
                                   </a>
-                                </Button>
-                                <Button 
-                                  size="sm"
-                                  className="h-8 w-full sm:w-auto justify-center bg-[#00629B] hover:bg-[#00629B]/90"
-                                  asChild
-                                >
                                 </Button>
                               </div>
                             </td>
