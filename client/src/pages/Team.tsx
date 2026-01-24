@@ -149,10 +149,10 @@ export default function Team() {
     },
     {
       id: 17,
-      name: "Tarun",
+      name: "Deepanjali srivastava",
       role: "Technical Member",
       department: "B.Tech. CSE - Core",
-      email: "25LBCS1261@culkomail.in",
+      email: "25LBCS1291@culkomail.in",
       imageUrl: "/images/team/tech5.jpg",
       category: "tech", 
       bio: "Technical team member contributing to system support.",   
