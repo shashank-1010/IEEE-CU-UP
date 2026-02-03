@@ -149,7 +149,7 @@ export default function Team() {
     },
     {
       id: 17,
-      name: "Deepanjali srivastava",
+      name: "Deepanjali Srivastava",
       role: "Technical Member",
       department: "B.Tech. CSE - Core",
       email: "25LBCS1291@culkomail.in",
@@ -210,7 +210,7 @@ export default function Team() {
       id: 22,
       name: "Suryansh",
       role: "Anchor",
-      department: "BA_JMC",
+      department: "B.A. - JMC",
       email: "25LBAJ1006@culkomail.in",
       imageUrl: "/images/team/achor3.png",
       category: "anchor",
