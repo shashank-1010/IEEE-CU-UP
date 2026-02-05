@@ -25,7 +25,7 @@ return (
         {/* CU Logo - Left Side */}
 <div className="flex items-center">
   <img 
-    src="https://image2url.com/r2/default/images/1769060082997-431bbd82-feba-45f6-8ee4-3f381c9e6313.jpg" 
+    src="/images/team/Screenshot 2025-09-23 142329.png" 
     alt="CU Logo" 
     className="h-16 w-auto" 
   />
