@@ -100,19 +100,23 @@ const Counter = ({ end, suffix = "", duration = 2000, delay = 0 }: CounterProps)
 // Parallax Content Components
 const IMG_PADDING = 12;
 
+interface TextParallaxContentProps {
+  imgUrl: string; 
+  subheading: string; 
+  heading: string; 
+  description?: string;
+  children: React.ReactNode;
+  icon?: React.ComponentType<{ className?: string }>;
+}
+
 const TextParallaxContent = ({ 
   imgUrl, 
   subheading, 
   heading, 
+  description,
   children,
   icon: Icon 
-}: { 
-  imgUrl: string; 
-  subheading: string; 
-  heading: string; 
-  children: React.ReactNode;
-  icon?: React.ComponentType<{ className?: string }>;
-}) => {
+}: TextParallaxContentProps) => {
   return (
     <div
       style={{
@@ -122,7 +126,7 @@ const TextParallaxContent = ({
     >
       <div className="relative h-[150vh]">
         <StickyImage imgUrl={imgUrl} />
-        <OverlayCopy heading={heading} subheading={subheading} icon={Icon} />
+        <OverlayCopy heading={heading} subheading={subheading} description={description} icon={Icon} />
       </div>
       {children}
     </div>
@@ -157,15 +161,19 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
   );
 };
 
+interface OverlayCopyProps {
+  subheading: string; 
+  heading: string; 
+  description?: string;
+  icon?: React.ComponentType<{ className?: string }>;
+}
+
 const OverlayCopy = ({ 
   subheading, 
   heading, 
+  description,
   icon: Icon 
-}: { 
-  subheading: string; 
-  heading: string; 
-  icon?: React.ComponentType<{ className?: string }>;
-}) => {
+}: OverlayCopyProps) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -184,7 +192,7 @@ const OverlayCopy = ({
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center px-4"
     >
-      <div className="relative text-center">
+      <div className="relative text-center max-w-3xl">
         {Icon && (
           <motion.div 
             initial={{ opacity: 0, scale: 0 }}
@@ -202,6 +210,19 @@ const OverlayCopy = ({
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading text-white tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] leading-snug sm:leading-normal">
           {heading}
         </h2>
+        
+        {/* Added description text */}
+        {description && (
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+          >
+            {description}
+          </motion.p>
+        )}
       </div>
     </motion.div>
   );
@@ -315,6 +336,7 @@ export default function Home() {
             imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             subheading="Innovate"
             heading="Cutting Edge Technology"
+            description="Explore AI, IoT, and emerging tech through hands-on workshops and real-world projects"
             icon={Cpu}
           >
             <ParallaxSectionContent />
@@ -324,6 +346,7 @@ export default function Home() {
             imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             subheading="Collaborate"
             heading="Global Community"
+            description="Connect with 400,000+ students worldwide and build lifelong professional networks"
             icon={Users}
           >
             <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
@@ -348,6 +371,7 @@ export default function Home() {
             imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             subheading="Excel"
             heading="Achieve Excellence"
+            description="Win competitions, publish research, and become a leader in your technical field"
             icon={Trophy}
           >
             <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:gap-12 px-4 sm:px-6 pb-16 sm:pb-20 md:pb-24 pt-10 sm:pt-12 md:pt-14">
