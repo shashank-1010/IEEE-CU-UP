@@ -441,7 +441,7 @@ export default function Register() {
                                 <SelectTrigger className={`${errors.course ? "border-red-500" : ""}`}>
                                   <SelectValue placeholder="Select your course" />
                                 </SelectTrigger>
-                                <SelectContent>
+                                <SelectContent className="bg-white">
                                   {courseOptions.map((course) => (
                                     <SelectItem key={course} value={course}>
                                       {course}
@@ -462,7 +462,7 @@ export default function Register() {
                                 <SelectTrigger className={`${errors.department ? "border-red-500" : ""}`}>
                                   <SelectValue placeholder="Select your department" />
                                 </SelectTrigger>
-                                <SelectContent>
+                                <SelectContent className="bg-white">
                                   {departmentOptions.map((dept) => (
                                     <SelectItem key={dept} value={dept}>
                                       {dept}
@@ -483,7 +483,7 @@ export default function Register() {
                                 <SelectTrigger className={`${errors.school ? "border-red-500" : ""}`}>
                                   <SelectValue placeholder="Select your school" />
                                 </SelectTrigger>
-                                <SelectContent>
+                                <SelectContent className="bg-white">
                                   {schoolOptions.map((school) => (
                                     <SelectItem key={school} value={school}>
                                       {school}
@@ -531,7 +531,7 @@ export default function Register() {
                                 <SelectTrigger className={`${errors.membershipType ? "border-red-500" : ""}`}>
                                   <SelectValue placeholder="Select membership type" />
                                 </SelectTrigger>
-                                <SelectContent>
+                                <SelectContent className="bg-white">
                                   <SelectItem value="Student Member">Student Member</SelectItem>
                                   <SelectItem value="Graduate Student Member">Graduate Student Member</SelectItem>
                                 </SelectContent>
