@@ -214,7 +214,7 @@ export default function Members() {
                             ID
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
-                            Contact
+                            Email
                           </th>
                           <th scope="col" className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             School and Course
@@ -356,3 +356,4 @@ export default function Members() {
     </div>
   );
 }
+
