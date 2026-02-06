@@ -27,9 +27,10 @@ return (
   <img 
     src="/images/team/Screenshot 2025-09-23 142329.png" 
     alt="CU Logo" 
-    className="h-16 w-auto" 
+    className="h-10 w-auto" 
   />
 </div>
+
         
         {/* IEEE Logo and Text */}
         <div className="flex items-center space-x-3">
