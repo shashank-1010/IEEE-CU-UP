@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Globe, BookOpen, Award, Users, Calendar, Cpu, Trophy } from "lucide-react";
+import { ArrowRight, Globe, BookOpen, Award, Users, Calendar, Cpu, Trophy, MapPin, GraduationCap, Building, CheckCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import React from "react";
@@ -271,6 +271,182 @@ const DrawCircleText = () => {
   );
 };
 
+// Campus Info Section with Side-by-Side Layout
+const CampusInfoSection = () => {
+  return (
+    <section className="py-16 bg-white">
+      <div className="container-custom">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-lg bg-[#00629B]/10 flex items-center justify-center">
+              <Building className="h-6 w-6 text-[#00629B]" />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 font-heading">About Chandigarh University UP Campus</h2>
+              <p className="text-gray-600">A Premier Technical Institution in Uttar Pradesh</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Side-by-Side Layout */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Photo */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
+              <img 
+                src="https://www.vidyavision.com/CollegeUploads/Photos/2025-12-2-11-22-12_a%20(7).jpg"
+                alt="Chandigarh University UP Campus"
+                className="w-full h-auto object-cover aspect-[4/3]"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=2064";
+                }}
+              />
+            </div>
+            {/* Location overlay removed as requested */}
+          </motion.div>
+
+          {/* Right Side - Written Text */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-6"
+          >
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">World-Class Technical Education</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The Chandigarh University Uttar Pradesh Campus is a modern educational hub strategically located in the heart of Uttar Pradesh. Designed to provide world-class technical education and cutting-edge research opportunities, the campus stands as a beacon of innovation and academic excellence.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Spread across acres of state-of-the-art infrastructure, the campus offers a perfect blend of academic rigor and technological innovation, creating an ideal ecosystem for IEEE student activities and technical growth.
+              </p>
+            </div>
+
+            {/* Key Features */}
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-[#00629B]" />
+                Campus Highlights
+              </h4>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-gray-300 flex items-center justify-center">
+                      <GraduationCap className="h-5 w-5 text-[#00629B]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">50+ Programs</p>
+                      <p className="text-xs text-gray-600">Technical & Professional</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-gray-300 flex items-center justify-center">
+                      <Users className="h-5 w-5 text-[#00629B]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">10,000+ Students</p>
+                      <p className="text-xs text-gray-600">Active Community</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-gray-300 flex items-center justify-center">
+                      <Cpu className="h-5 w-5 text-[#00629B]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Modern Labs</p>
+                      <p className="text-xs text-gray-600">Advanced Facilities</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-gray-300 flex items-center justify-center">
+                      <Award className="h-5 w-5 text-[#00629B]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Industry Ties</p>
+                      <p className="text-xs text-gray-600">Strong Collaborations</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Facts */}
+            <div className="border-t border-gray-200 pt-6">
+              <h4 className="font-bold text-lg text-gray-900 mb-3">Why Choose CU UP Campus?</h4>
+              <ul className="space-y-2">
+                {[
+                  "State-of-the-art laboratories and research facilities",
+                  "Strong industry-academia partnerships",
+                  "Active technical clubs and societies",
+                  "Innovation and entrepreneurship development cell",
+                  "Modern campus with all amenities",
+                  "Focus on holistic student development"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-2 text-gray-700">
+                    <div className="w-5 h-5 rounded-full bg-[#00629B]/10 flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <div className="w-2 h-2 bg-[#00629B] rounded-full"></div>
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Location Info - Added in text section instead of overlay */}
+            <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-white border border-blue-200 flex items-center justify-center">
+                  <MapPin className="h-5 w-5 text-[#00629B]" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Campus Location</p>
+                  <p className="text-sm text-gray-700">Uttar Pradesh, India</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* IEEE Integration Note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="mt-12 p-6 bg-gradient-to-r from-[#00629B]/5 to-blue-50 rounded-xl border border-[#00629B]/20"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-lg bg-[#00629B]/10 flex items-center justify-center">
+              <Globe className="h-6 w-6 text-[#00629B]" />
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-900">IEEE at CU UP Campus</h4>
+              <p className="text-gray-700">
+                The IEEE Student Branch leverages the campus's excellent infrastructure and resources to provide students with unparalleled opportunities in technical innovation, research, and professional development.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -329,6 +505,9 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent pointer-events-none -z-0" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
         </section>
+
+        {/* CU UP Campus Info with Side-by-Side Layout */}
+        <CampusInfoSection />
 
         {/* Parallax Features Section */}
         <div className="bg-white">
