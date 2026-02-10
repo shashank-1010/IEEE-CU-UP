@@ -12,6 +12,7 @@ import Contact from "@/pages/Contact";
 import Members from "@/pages/MemberCard";
 import Register from "@/pages/register";
 import Guidelines from "@/pages/guide";
+import LandingPopup from "@/components/LandingPopup";
 
 function Router() {
   return (
@@ -33,6 +34,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <LandingPopup />
         <Toaster />
         <Router />
       </TooltipProvider>
